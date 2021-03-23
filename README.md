@@ -1,4 +1,4 @@
-# ARAP Deformer
+# Interactive As-Rigid-As-Possible Mesh Deformer
 
 This implementation offers an interactive mesh deformer for triangulated meshes. It allows the user to directly interact with a mesh in a graphical user interface and to view the deformation in real-time. It is an implementation of the ARAP deformation algorithm by Sorkine et al. [1]. 
 The algorithm optimizes the rotations and positions of the vertices by considering their local rigidity, i.e. the local cells consisting of a vertex and its neighbors. This procedure can be done in an iterative flip-flop fashion where the rotations are estimated with the Procrustes algorithm and the new vertex positions with a linear equation system (LES).
