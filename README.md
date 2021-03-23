@@ -9,7 +9,7 @@ The algorithm optimizes the rotations and positions of the vertices by consideri
 For the deformation the user can choose between the following weights:
 - Constant: <img src="https://render.githubusercontent.com/render/math?math=w_{ij}=1">
 - Uniform: <img src="https://render.githubusercontent.com/render/math?math=w_{ij}=\frac{1}{|N(v_i)|}">, where <img src="https://render.githubusercontent.com/render/math?math=|N(v_i)|"> is the number of neighbors of vertex i
-- Cotangent: <img src="https://render.githubusercontent.com/render/math?math=w_{ij} = \frac{1}{2}(cot(\alpha_{ij}) + cot(\beta_{ij}))">
+- Cotangent: <img src="https://render.githubusercontent.com/render/math?math=w_{ij} = \frac{1}{2}(cot(\alpha_{ij}) %2B cot(\beta_{ij}))">
 
 Sparse matrices are supported and for the estimation of the vertex locations the user can decide on which decomposition is used for solving the LES.
 
