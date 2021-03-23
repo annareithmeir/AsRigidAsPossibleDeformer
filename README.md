@@ -1,8 +1,6 @@
 # ARAP Deformer
 
-Estimating realistic deformations on an arbitrary mesh is a challenging topic. A deformation method that ensures local rigidity of the mesh during deformation can offer a solution and an interactive mesh deformer would allow the user to perform complex deformations. 
-
-This implementation offers a framework which allows the user to directly interact with a mesh in a graphical user interface and to view the deformation in real-time. It is an implementation of the ARAP deformation algorithm by Sorkine et al. [1]. 
+This implementation offers an interactive mesh deformer for triangulated meshes. It allows the user to directly interact with a mesh in a graphical user interface and to view the deformation in real-time. It is an implementation of the ARAP deformation algorithm by Sorkine et al. [1]. 
 The algorithm optimizes the rotations and positions of the vertices by considering their local rigidity, i.e. the local cells consisting of a vertex and its neighbors. This procedure can be done in an iterative flip-flop fashion where the rotations are estimated with the Procrustes algorithm and the new vertex positions with a linear equation system (LES).
 
 ![](arap.gif)
@@ -10,8 +8,8 @@ The algorithm optimizes the rotations and positions of the vertices by consideri
 
 For the deformation the user can choose between the following weights:
 - Constant: <img src="https://render.githubusercontent.com/render/math?math=w_{ij}=1">
-- Uniform: <img src="https://render.githubusercontent.com/render/math?math=w_{ij}=1/abs{N_i}">, where <img src="https://render.githubusercontent.com/render/math?math=N_i"> is the number of neighbors of vertex i
-- Cotangent: <img src="https://render.githubusercontent.com/render/math?math=w_{ij} = \frac{1}{2}(\cot{\alpha_{ij}} + \cot{\beta_{ij}})">
+- Uniform: <img src="https://render.githubusercontent.com/render/math?math=w_{ij}=\frac{1}{|N(v_i)|}">, where <img src="https://render.githubusercontent.com/render/math?math=|N(v_i)|"> is the number of neighbors of vertex i
+- Cotangent: <img src="https://render.githubusercontent.com/render/math?math=w_{ij} = \frac{1}{2}(\cot{\alpha_{ij}}+\cot{\beta_{ij}})">
 
 Sparse matrices are supported and for the estimation of the vertex locations the user can decide on which decomposition is used for solving the LES.
 
